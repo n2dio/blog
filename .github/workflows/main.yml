@@ -24,14 +24,23 @@ jobs:
           BUILD_ONLY: true
       - name: "List n2d.io build dir contents"
         run: ls -la ./public
+      - name: Store build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: n2d-build
+          path: ./public
   publish:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: n2d-build
       - uses: up9cloud/action-rsync@master
         name: "rsync to n2d-static-01"
         env:
           HOST: n2d.io
           KEY: ${{secrets.N2D_DEPLOY_SSH_KEY}}
-          SOURCE: ./public
-          TARGET: /var/www/n2d.io
+          SOURCE: ./public/
+          TARGET: /var/www/n2d.io/
