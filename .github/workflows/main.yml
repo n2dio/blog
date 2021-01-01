@@ -1,27 +1,37 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: n2d.io site
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   push:
     branches:
-      - main 
+      - main
   pull_request:
-    branches: 
+    branches:
       - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/master'
     steps:
-      - name: 'Checkout'
+      - name: "Checkout repo"
         uses: actions/checkout@master
-      - name: 'Build only' 
+      - name: "Build n2d.io site"
         uses: shalzz/zola-deploy-action@master
         env:
           BUILD_DIR: .
           BUILD_ONLY: true
-      - name: 'List build dir'
+      - name: "List n2d.io build dir contents"
         run: ls -la ./public
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: up9cloud/action-rsync@master
+        name: "rsync to n2d-static-01"
+        env:
+          HOST: n2d.io
+          KEY: ${{secrets.N2D_DEPLOY_SSH_KEY}}
+          SOURCE: ./public
+          TARGET: /var/www/n2d.io
