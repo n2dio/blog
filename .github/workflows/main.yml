@@ -42,5 +42,5 @@ jobs:
         env:
           HOST: n2d.io
           KEY: ${{secrets.N2D_DEPLOY_SSH_KEY}}
-          SOURCE: ./public/
+          SOURCE: public/
           TARGET: /var/www/n2d.io/
