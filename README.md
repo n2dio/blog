@@ -9,7 +9,7 @@ For local development, you need `zola` to be installed. This can be done via you
 After cloning the repository initially, please ensure to also initializa the theme submodule by running
 
 ```bash
-git pull --recurse-submodules
+git submodule init && git pull --recurse-submodules
 ```
 
 ### Serving and building locally
