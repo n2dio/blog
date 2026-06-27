@@ -1,21 +1,6 @@
 #import "/lib/template.typ": page
 #show: page.with(title: "About")
 
-= About Tim Eggert
+= About
 
-My name is Tim and I live in Leipzig, Germany. I am a happy husband and father and most of my work and even free-time is dedicated to technology - mostly software.
-
-Most of my former professional life I was working as a Software Engineer, Co-Founder and CTO of CeleraOne (now acquired by Piano) and Software Architect. When producing software, I mostly did that with python, nginx (openresty), Lua, Memcache, a little C++ and used quite a bunch of other technologies (databases, infrastructure automation). I went on sabbatical in 2021 (yap, there could have been more suitable years that a pandemic year) and enjoyed life with family and full free-time control. In my former free-time I basically enjoy trying out all kinds of new technologies in the software world, but mostly with a server-side or automation touch.
-
-Nowadays, I work as a Freelance CTO and IT Consultant. When I write software, I prefer writing backend code and infrastructural code mostly using the Rust Programming Language. There is still a lot to learn (I started to learn Rust back in 2018) but I really enjoy the openness of the Rust community and strive to contribute once I feel ready for it.
-
-Hobbies off the digital world usually include:
-
-- listening to a wide range of music (classical music (mostly instrumenal only), punkrock, hardcore, post-hardcore, metalcore, black-, death-, melodic death-, thrash-metal and what not).
-- playing electric guitar (pretty old Aria Pro II - Stratocaster),
-- riding my gravel bike.
-
-= Contact
-
-- Web: #link("https://n2d.io")[n2d.io]
-- Source: the posts in this repo are the source of truth.
+Write your about page here.
